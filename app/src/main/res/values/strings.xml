@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Login Sample</string>
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="top_icon">TOP ICON</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="or">OR</string>
+    <string name="google_icon">google icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="new_user_register_now">New User? Register Now</string>
+    <!-- to toggle the open close button of the navigation drawer -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string-array name="division">
+        <item>Division</item>
+        <item>MYSORE</item>
+        <item>HASSAN</item>
+        <item>HUNSUR</item>
+        <item>MADIKERI</item>
+        <item>HUNSUR</item>
+        <item>N R MOHALLA</item>
+
+    </string-array>
+    <string-array name="sub">
+        <item>SUB-DIVISION</item>
+        <item>CHAMUNDIPURAM</item>
+        <item>JYOTHINAGARA</item>
+        <item>HOOTAGHALLI</item>
+        <item>R V NAGARA</item>
+        <item>V V PURAM</item>
+        <item>VIJAYANAGAR</item>
+
+    </string-array>
+    <string-array name="CATEGORY">
+        <item>CATEGORY</item>
+        <item>BILLING COMPLAINTS</item>
+        <item>DISCONNECTION AND RECONNECTION COMPLAINTS</item>
+        <item>LINE BREAKDOWN</item>
+        <item>SAFETY ISSUES</item>
+        <item>VOLTAGE VARIATION</item>
+        <item>METERING COMPLAINTS</item>
+
+    </string-array>
+
+    <string-array name="subc">
+        <item>CATEGORY</item>
+        <item>BILLING COMPLAINTS</item>
+        <item>DISCONNECTION AND RECONNECTION COMPLAINTS</item>
+        <item>LINE BREAKDOWN</item>
+        <item>SAFETY ISSUES</item>
+        <item>VOLTAGE VARIATION</item>
+        <item>METERING COMPLAINTS</item>
+
+    </string-array>
+
+
+
+</resources>
