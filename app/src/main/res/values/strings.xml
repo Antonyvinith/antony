@@ -20,7 +20,7 @@
     <string name="already_have_an_account">Already Have an Account?</string>
     <string name="mobile_number">Mobile Number</string>
     <string-array name="division">
-        <item>Division</item>
+        <item>Please select your division</item>
         <item>MYSORE</item>
         <item>HASSAN</item>
         <item>HUNSUR</item>
@@ -40,7 +40,7 @@
 
     </string-array>
     <string-array name="CATEGORY">
-        <item>CATEGORY</item>
+        <item>PLease select your category</item>
         <item>BILLING COMPLAINTS</item>
         <item>DISCONNECTION AND RECONNECTION COMPLAINTS</item>
         <item>LINE BREAKDOWN</item>

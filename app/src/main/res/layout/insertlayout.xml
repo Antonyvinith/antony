@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/ComplaintList"
-        android:layout_width="414dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Complaint List"
-        android:textColor="#00FF00"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -29,11 +15,11 @@
         app:cardCornerRadius="8dp">
 
 
-        <LinearLayout
-            android:id="@+id/dynamic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/dynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
             <!--I need to take it from here to be edited in the insert layout-->
 
@@ -54,6 +40,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:maxLines="1"
+                    android:text="COMPLAINT__00001(AccountId:347865)"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -66,7 +53,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="30dp"
                     android:gravity="center"
-
+                    android:text="Billing Complaint"
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -79,9 +66,9 @@
                     android:layout_below="@+id/ComplaintDescriptionTitle"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="45dp"
-                    app:srcCompat="@drawable/telephone"
+                    android:src="@drawable/telephone"
                     app:tint="#808080"
-                    />
+                     />
 
                 <TextView
                     android:id="@+id/Phonenumber"
@@ -91,6 +78,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="45dp"
                     android:layout_marginEnd="20dp"
+                    android:text="+918150064489"
                     android:layout_toEndOf="@+id/examPic"
                     android:textSize="16sp" />
 
@@ -113,6 +101,7 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginTop="7dp"
                     android:layout_marginEnd="20dp"
+                    android:text="30 Aug 2023"
                     android:layout_toEndOf="@+id/examPic2"
                     android:textSize="16sp" />
 
@@ -133,50 +122,73 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="20dp"
+                    android:text="Antony Vinith"
                     android:layout_toEndOf="@+id/examPic2"
                     android:textSize="16sp" />
 
 
                 <TextView
                     android:id="@+id/DivisionDetails"
-                    android:layout_width="238dp"
-                    android:layout_height="45dp"
+                    android:layout_width="236dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/Name"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@+id/examPic2"
+                    android:fontFamily="@font/lobster_regular"
                     android:text="Division Details:"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Division"
-                    android:layout_width="243dp"
-                    android:layout_height="66dp"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/DivisionDetails"
                     android:layout_marginStart="7dp"
                     android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@+id/examPic2"
+                    android:text="Madikeri"
                     android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/addressDEscr"
+                    android:layout_width="236dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Division"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@+id/examPic2"
+                    android:fontFamily="@font/lobster_regular"
+                    android:text="Address:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Address"
-                    android:layout_width="241dp"
-                    android:layout_height="62dp"
-                    android:layout_below="@+id/Division"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressDEscr"
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@+id/examPic2"
+                    android:text="Postmaster, Madikeri H.O, Kodagu, Karnataka, India (IN),"
                     android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/more"
-                    android:layout_width="252dp"
-                    android:layout_height="62dp"
+                    android:layout_width="243dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/Address"
                     android:layout_marginStart="7dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@+id/examPic2"
-                    android:textSize="16sp" />
+                    android:fontFamily="@font/lobster_regular"
+                    android:text="More Details:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Details"
@@ -186,6 +198,9 @@
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="20dp"
+                    android:text="Upon reviewing the charges, I have found that I am being billed amounts that significantly exceed the rates and pricing we initially agreed upon when I became a customer.
+   - [Provide details of the agreed-upon pricing, e.g., mention your contract or agreement terms].
+   - The overbilling amounts to [mention the amount of overbilling]"
                     android:layout_toEndOf="@+id/examPic2"
                     android:textSize="16sp" />
 
@@ -200,20 +215,20 @@
 
                 <ImageView
                     android:id="@+id/Complaint_Image"
-                    android:layout_width="265dp"
-                    android:layout_height="456dp"
+                    android:layout_width="269dp"
+                    android:layout_height="276dp"
                     android:layout_below="@id/Details"
                     android:layout_marginStart="-269dp"
-                    android:layout_marginTop="1dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginEnd="50dp"
                     android:layout_toEndOf="@+id/Details"
-                    android:foregroundGravity="center" />
+                    android:foregroundGravity="center"
+                    android:src="@drawable/billdemo" />
 
 
             </RelativeLayout>
-        </LinearLayout>
 
+    </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 </ScrollView>
-</LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -28,18 +29,38 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
+        val usernameEditText = findViewById<EditText>(R.id.inputEmail)
+        val passwordEditText = findViewById<EditText>(R.id.inputPassword)
+        val loginButton = findViewById<Button>(R.id.btnLogin)
         auth = FirebaseAuth.getInstance()
 
 
 
-        val currentUser = auth.currentUser
 
-        /*if (currentUser != null) {
 
-            val intent = Intent(this, Dashboard::class.java)
-            startActivity(intent)
-            finish()
-        }*/
+        loginButton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            if (username == "Antony" && password == "antony123") {
+                val intent = Intent(this, Admin::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+
+
+
+/*if (currentUser != null) {
+
+    val intent = Intent(this, Dashboard::class.java)
+    startActivity(intent)
+    finish()
+}*/
 
 
         val signin:ImageView = findViewById(R.id.google)
