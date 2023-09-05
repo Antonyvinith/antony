@@ -204,42 +204,63 @@ class Createcomplaint:AppCompatActivity() {
 
 
         reg.setOnClickListener {
-            p.visibility = View.VISIBLE
-            handler.postDelayed({
-                p.visibility = View.INVISIBLE
-                nameEditText = name.text.toString()
-                if(nameEditText.isBlank())
-                {
-                    name.error="empty"
-                }
-                numberEditText = number.text.toString().trim()
 
-                poleEditText = pole.text.toString().trim()
-                summaryEditText = summary.text.toString().trim()
-                AddressEditText = Address.text.toString().trim()
-                phonenumberedittext=phonenumber.text.toString().trim()
-                UserId = numberEditText
-                writeUser(
-                    UserId,
-                    nameEditText,
-                    AddressEditText,
-                    poleEditText,
-                    selectedDivision,
-                    subdivision,
-                    cat1,
-                    summaryEditText,
-                    selecteddate,
-                    phonenumberedittext,
-                    selectedImageUri
-                )
-                Toast.makeText(this,"Complaint Successfully Registered",Toast.LENGTH_LONG).show()
-                val i =Intent(this,Dashboard::class.java)
-                startActivity(i)
+            val nameEditText = name.text.toString().trim()
+            val numberEditText = number.text.toString().trim()
+            val poleEditText = pole.text.toString().trim()
+            val phonenumberedittext = phonenumber.text.toString().trim()
 
+            if (nameEditText.isEmpty()) {
+                name.error = "Name is required"
+            } else {
+                name.error = null
+            }
 
-            }, 3000)
+            if (phonenumberedittext.length != 13) {
+                phonenumber.error = "Phone number should be 10 digits"
+            } else {
+                phonenumber.error = null
+            }
+
+            if (numberEditText.length != 6) {
+                number.error = "Account ID should be 6 digits"
+            } else {
+                number.error = null
+            }
+
+            // Check if any error is present
+            val hasErrors = name.error != null || phonenumber.error != null || number.error != null
+
+            // If there are no errors, proceed with registration
+            if (!hasErrors) {
+                p.visibility = View.VISIBLE
+                handler.postDelayed({
+                    p.visibility = View.INVISIBLE
+                    val selecteddate = dateEditText.text.toString().trim()
+                    val summaryEditText = summary.text.toString().trim()
+                    val AddressEditText = Address.text.toString().trim()
+                    UserId = numberEditText
+                    writeUser(
+                        UserId,
+                        nameEditText,
+                        AddressEditText,
+                        poleEditText,
+                        selectedDivision,
+                        subdivision,
+                        cat1,
+                        summaryEditText,
+                        selecteddate,
+                        phonenumberedittext,
+                        selectedImageUri
+                    )
+                    Toast.makeText(this, "Complaint Successfully Registered", Toast.LENGTH_LONG).show()
+                    val i = Intent(this, Dashboard::class.java)
+                    startActivity(i)
+                }, 3000)
+            }
         }
-         sharedPreferences = getSharedPreferences("complaintPrefs", Context.MODE_PRIVATE)
+
+        sharedPreferences = getSharedPreferences("complaintPrefs", Context.MODE_PRIVATE)
         complaintCounter = sharedPreferences.getInt("complaintCounter", 0)
 
 

@@ -22,6 +22,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private lateinit var auth: FirebaseAuth
+    private  var allowedPassword="admin123"
+    private var allowedUserId="admin@email.com"
 
 
 
@@ -42,32 +44,50 @@ class LoginActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if (username == "Antony" && password == "antony123") {
-                val intent = Intent(this, Admin::class.java)
-                startActivity(intent)
-                finish()
-            } else {
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
+
+
+            if (username.isNotEmpty() && password.isNotEmpty()) {
+
+                if (username == allowedUserId && password == allowedPassword) {
+                    signInForAdminUser(username, password)
+                }
+                else
+                {
+                    Toast.makeText(this,"Invalid Credentials",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+                else {
+                    Toast.makeText(this, "Please fill in fields", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            val signin: ImageView = findViewById(R.id.google)
+            signin.setOnClickListener {
+                signIn()
             }
         }
 
 
-
-
-
-/*if (currentUser != null) {
-
-    val intent = Intent(this, Dashboard::class.java)
-    startActivity(intent)
-    finish()
-}*/
-
-
-        val signin:ImageView = findViewById(R.id.google)
-        signin.setOnClickListener {
-            signIn()
-        }
+     fun signInForAdminUser(userId:String,password:String)
+    {
+        auth.signInWithEmailAndPassword(userId, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val userId = auth.currentUser
+                    startActivity(Intent(this, Admin::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Authentication failed. Check your email and password.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
     }
+
+
 
     private fun signIn() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -116,4 +136,4 @@ class LoginActivity : AppCompatActivity() {
     }
 }
 
-      
+
